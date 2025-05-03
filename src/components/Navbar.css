@@ -1,0 +1,36 @@
+/* Navbar.css */
+.navbar {
+    background-color: #007bff;
+  }
+  
+  .nav-link {
+    color: #fff !important;
+  }
+  
+  .navbar-brand {
+    color: #fff !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #ffeb3b !important;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
