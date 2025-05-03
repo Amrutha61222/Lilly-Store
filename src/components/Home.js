@@ -1,15 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";  // Import Link from react-router-dom
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 import ProductCard from "../components/ProductCard"; // Assuming this is the correct path
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function Home({ filteredProducts, addToCart }) {
+function Home({ addToCart }) {
+    const [products, setProducts] = useState([]);
     const [cartConfirmation, setCartConfirmation] = useState(null);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const querySnapshot = await getDocs(collection(db, "products"));
+            const fetchedProducts = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setProducts(fetchedProducts);
+        };
+        fetchProducts();
+    }, []);
 
     const handleAddToCart = (product) => {
         addToCart(product);
         setCartConfirmation("Added to Cart!");
         setTimeout(() => setCartConfirmation(null), 1500);
     };
+
+    // Filter products by category (Summer or Cotton)
+    const cottonProducts = products.filter(product => product.category === "cotton");
+    const summerProducts = products.filter(product => product.category === "summer");
 
     // Cloudinary image URLs for the carousel
     const carouselImages = [
@@ -102,8 +122,16 @@ function Home({ filteredProducts, addToCart }) {
             <div className="container my-5">
                 <h2 className="text-center mb-4">Featured Products</h2>
                 <div className="row">
-                    {filteredProducts.slice(0, 4).map((product) => (  // Limit to first 4 products for featured
-                        <div className="col-md-3" key={product.id}>
+                    {/* Show 2 products from Summer */}
+                    {summerProducts.slice(0, 2).map((product) => (
+                        <div key={product.id} className="col-md-3">
+                            <ProductCard product={product} handleAddToCart={handleAddToCart} />
+                        </div>
+                    ))}
+
+                    {/* Show 2 products from Cotton */}
+                    {cottonProducts.slice(0, 2).map((product) => (
+                        <div key={product.id} className="col-md-3">
                             <ProductCard product={product} handleAddToCart={handleAddToCart} />
                         </div>
                     ))}
