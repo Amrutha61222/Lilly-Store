@@ -1,26 +1,26 @@
 
-# 🛍️ Fashion Store
+# Fashion Store
 
 A modern fashion eCommerce web application built with React, Firebase, Cloudinary, and Bootstrap. The store features product browsing, user authentication, admin management, shopping cart, and category filtering.
 
-## 🔥 Features
+## Features
 
-- 👕 Product listing with search, sort, and category filter
-- 🔐 User authentication (login/signup with Firebase Auth)
-- 🛒 Shopping cart with item quantity control and total pricing
-- 👩‍💼 Admin panel with product CRUD (Create, Read, Update, Delete)
-- 📁 Cloudinary image uploads
-- 🔥 Firebase Firestore for database
-- ✨ Responsive UI with Bootstrap
+- Product listing with search, sort, and category filter
+- User authentication (login/signup with Firebase Auth)
+- Shopping cart with item quantity control and total pricing
+- Admin panel with product CRUD (Create, Read, Update, Delete)
+- Cloudinary image uploads
+- Firebase Firestore for database
+- Responsive UI with Bootstrap
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React, Bootstrap, React Router
 - **Backend:** Firebase Firestore
 - **Authentication:** Firebase Auth
 - **Image Hosting:** Cloudinary
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -73,11 +73,7 @@ npm start
 
 Visit `http://localhost:3000` to view the app.
 
-## 🖼️ Screenshots
-
-> Add some screenshots here showing the store front, login/signup, cart, and admin panel.
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
