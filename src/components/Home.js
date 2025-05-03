@@ -52,7 +52,7 @@ function Home({ addToCart }) {
                                         src={image}
                                         className="d-block w-100"
                                         alt={`Slide ${index + 1}`}
-                                        style={{ objectFit: "cover", height: "500px" }}
+                                        style={{ objectFit: "contain", height: "500px" }}
                                     />
                                 </Link>
                             ) : index === 2 ? (
@@ -61,7 +61,7 @@ function Home({ addToCart }) {
                                         src={image}
                                         className="d-block w-100"
                                         alt={`Slide ${index + 1}`}
-                                        style={{ objectFit: "cover", height: "500px" }}
+                                        style={{ objectFit: "contain", height: "500px" }}
                                     />
                                 </Link>
                             ) : (
@@ -69,7 +69,7 @@ function Home({ addToCart }) {
                                     src={image}
                                     className="d-block w-100"
                                     alt={`Slide ${index + 1}`}
-                                    style={{ objectFit: "cover", height: "500px" }}
+                                    style={{ objectFit: "contain", height: "500px" }}
                                 />
                             )}
                         </div>
